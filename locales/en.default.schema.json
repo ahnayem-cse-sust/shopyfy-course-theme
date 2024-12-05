@@ -495,8 +495,7 @@
           "name": "Announcement",
           "settings": {
             "text": {
-              "label": "Show announcement",
-              "default": "Welcome to our store"
+              "label": "Show announcement"
             },
             "text_alignment": {
               "label": "Text alignment",
