@@ -7,7 +7,7 @@
         font-size: 16px;
     }
 </style>
-{% if section.blocks.settings.show_custom_announce %}
+{% if section.settings.show_custom_announce %}
   <div class="myliq">
       Hello World
   </div>
@@ -18,6 +18,14 @@
       "name": "t:sections.announcement-bar.name",
       "max_blocks": 12,
       "class": "announcement-bar-section",
+      "settings": [
+            {
+              "type": "checkbox",
+              "id": "show_custom_announce",
+              "default": true,
+              "label": "Show this announce"
+            }
+          ],
       "enabled_on": {
         "groups": ["header"]
       },
@@ -28,9 +36,9 @@
           "settings": [
             {
               "type": "checkbox",
-              "id": "show_custom_announce",
+              "id": "show_custom_announce_block",
               "default": true,
-              "label": "Show this announce"
+              "label": "Show announce block"
             }
           ]
         }
