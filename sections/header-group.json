@@ -28,7 +28,7 @@
       "settings": {
         "show_custom_announce": true,
         "text_custom_announce": "Hello World",
-        "font_size": 19
+        "font_size": 16
       }
     },
     "header": {
