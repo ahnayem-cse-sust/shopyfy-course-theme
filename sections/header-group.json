@@ -16,10 +16,7 @@
       "blocks": {
         "announcement-bar-0": {
           "type": "announcement",
-          "settings": {
-            "text": "963/5th Avenue, New York State USA",
-            "link": ""
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -28,12 +25,16 @@
       "custom_css": [
         "div {background-color: #001420;}"
       ],
-      "settings": {}
+      "settings": {
+        "show_custom_announce": true,
+        "text_custom_announce": "Hello World",
+        "font_size": 19
+      }
     },
     "header": {
       "type": "header",
       "custom_css": [
-        "sticky-header {background: #001420;;}"
+        "sticky-header {background: #001420;}"
       ],
       "settings": {
         "logo_position": "middle-left",
