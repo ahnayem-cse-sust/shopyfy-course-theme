@@ -4,19 +4,44 @@
         background-color: brown !important;
         text-align: center;
         padding: 16px 0;
-        font-size: 16px;
+        font-size: {{section.settings.font_size}}px;
     }
 </style>
-
-<div class="myliq">
-    Hello World
-</div>
+{% if section.settings.show_custom_announce %}
+  <div class="myliq">
+      {{ section.settings.text_custom_announce }}
+  </div>
+{% endif %}
 
 {% schema %}
     {
       "name": "t:sections.announcement-bar.name",
       "max_blocks": 12,
       "class": "announcement-bar-section",
+      "settings": [
+            {
+              "type": "checkbox",
+              "id": "show_custom_announce",
+              "default": true,
+              "label": "Show this announce"
+            },
+            {
+              "type": "text",
+              "id": "text_custom_announce",
+              "default": "Hello",
+              "label": "Edit announcement"
+            },
+            {
+              "type": "range",
+              "id": "font_size",
+              "min": 12,
+              "max": 50,
+              "step": 1,
+              "unit": "px",
+              "label": "Font size",
+              "default": 16
+            }
+          ],
       "enabled_on": {
         "groups": ["header"]
       },
@@ -24,19 +49,6 @@
         {
           "type": "announcement",
           "name": "t:sections.announcement-bar.blocks.announcement.name",
-          "settings": [
-            {
-              "type": "text",
-              "id": "text",
-              "default": "t:sections.announcement-bar.blocks.announcement.settings.text.default",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
-            },
-            {
-              "type": "url",
-              "id": "link",
-              "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
-            }
-          ]
         }
       ],
       "presets": [
