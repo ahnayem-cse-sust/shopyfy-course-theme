@@ -1,0 +1,77 @@
+<style>
+    .myparentcls {
+        background: linear-gradient(to right, black, blue);
+        color: white;
+        font-size: 2.2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100vw;
+        height: 5rem;
+        transition: all .5s linear;
+    }
+
+    .myparentcls:hover .mychildcls{
+        animation: unset;
+    }
+
+    .mychildcls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        animation: scrolling-bar 10s linear infinite;
+    }
+
+    @keyframes scrolling-bar {
+        0%{
+            transform: translateX(100%);
+        }
+        100%{
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+<div class="myparentcls">
+
+    {% if section.settings.my_text1 != blank %}
+    <div class="mychildcls">{{ section.settings.my_text1 }}</div>
+    {% endif %}
+
+    {% if section.settings.my_text2 != blank %}
+    <div class="mychildcls">{{ section.settings.my_text2 }}</div>
+    {% endif %}
+
+    {% if section.settings.my_text3 != blank %}
+    <div class="mychildcls">{{ section.settings.my_text3 }}</div>
+    {% endif %}
+</div>
+
+
+{% schema  %} 
+    {
+        "name" : "Custom Scrolling",
+        "settings": [
+            {
+                "type" : "text",
+                "id" : "my_text1",
+                "label" : "First Text",
+                "default" : "Hello World"
+            },
+            {
+                "type" : "text",
+                "id" : "my_text2",
+                "label" : "Second Text",
+                "default" : "Hello World2"
+            },
+            {
+                "type" : "text",
+                "id" : "my_text3",
+                "label" : "Third Text",
+                "default" : "Hello World3"
+            }
+        
+        ]
+    }
+{% endschema %}

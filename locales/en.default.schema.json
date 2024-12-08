@@ -448,7 +448,7 @@
       }
     },
     "announcement-bar": {
-      "name": "Announcement bar",
+      "name": "Title bar",
       "settings": {
         "auto_rotate": {
           "label": "Auto-rotate announcements"
