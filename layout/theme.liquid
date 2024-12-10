@@ -307,9 +307,11 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% section 'scrolling-ac' %}
+    {% comment %} {% section 'scrolling-ac' %} {% endcomment %}
 
-    {% sections 'header-group' %}
+    {% comment %} {% sections 'header-group' %} {% endcomment %}
+
+    {% sections 'header-group-custom' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
