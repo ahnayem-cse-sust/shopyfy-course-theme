@@ -1,0 +1,42 @@
+<style>
+    .my-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100px;
+        width: 100%;
+    }
+</style>
+
+<div class="my-header">
+    <div class="my-logo">
+        {% if section.settings.logo != blank %}
+        <a href="/">
+            <img src="{{ section.settings.logo |  img_url: 'medium' }}" alt="" />
+        </a>
+        {% else %}
+        <a href="/">
+            {{ shop.name }}
+        </a>
+        {% endif %}
+    </div>
+
+    <div class="my-menu">My Menu</div>
+    <div class="my-icon">Icons</div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Custom Header",
+    "settings": [
+            {
+                "type": "image_picker",
+                "id": "logo",
+                "label": "Upload image",
+                "info": "You can upload a logo size of 200px x 200px"
+            }
+        ]
+}
+{% endschema %}
+
