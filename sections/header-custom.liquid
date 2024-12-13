@@ -6,6 +6,30 @@
         min-height: 100px;
         width: 100%;
     }
+    .mynavbar{
+        width: 100%;
+    }
+    .mynavlist{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mynavitem{
+        display: inline-block;
+        margin: 0 1rem;
+    }
+    .mynavbar ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+        transition: .5s;
+    }
+    .mynavbar ul li a:hover {
+        color: rgb(42, 70, 197);
+        text-decoration: underline;
+    }
 </style>
 
 <div class="my-header">
@@ -21,7 +45,15 @@
         {% endif %}
     </div>
 
-    <div class="my-menu">My Menu</div>
+    <div class="my-menu">
+        <nav class="mynavbar">
+            <ul class="mynavlist">
+                <li class="mynavitem"><a href="#">Home</a></li>
+                <li class="mynavitem"><a href="#">About</a></li>
+                <li class="mynavitem"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="my-icon">Icons</div>
 </div>
 
